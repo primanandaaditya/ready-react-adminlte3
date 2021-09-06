@@ -3,10 +3,31 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {BrowserRouter as Router, Link, Route, Switch} from "react-router-dom";
+import Satu from "./Satu";
+import Dua from "./Dua";
+import Preloader from "./component/Preloader";
+import Navbar from "./component/Navbar";
+import MainSidebar from "./component/MainSidebar";
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+      <Router>
+          <Switch>
+              <Route exact path="/">
+                  <App/>
+              </Route>
+              <Route path="/satu">
+                  <Satu/>
+              </Route>
+              <Route path="/dua">
+                  <Dua/>
+              </Route>
+          </Switch>
+
+      </Router>
+
   </React.StrictMode>,
   document.getElementById('root')
 );
